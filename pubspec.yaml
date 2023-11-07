@@ -19,12 +19,12 @@ dependencies:
   flutter_riverpod: ^2.4.5
   json_annotation: ^4.8.1
   envied: ^0.3.0+3
-# dependency_ovverides:
+  easy_localization: ^3.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
   flutter_lints: ^2.0.0
   very_good_analysis: ^5.1.0
   build_runner: ^2.4.6
@@ -32,17 +32,19 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
 
 flutter_Launcher_icons:
-  android: "launcher_icon" 
-  ios: true 
+  android: "launcher_icon"
+  ios: true
   image_path: "assets/app/app_icon.png"
-  min_sdk_android: 21 # android min sok min:16, default 21 
+  min_sdk_android: 21 # android min sok min:16, default 21
   remove_alpha_ios: true
 
 flutter_gen:
   output: lib/product/generated/
   integrations:
-    lootie: true
-
+    lottie: true
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - asset/translations/

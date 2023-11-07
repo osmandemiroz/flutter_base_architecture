@@ -1,0 +1,18 @@
+{
+    "home": {
+        "title": "Home Page",
+        "subtitle": "Welcome to home page"
+
+    },
+    "general":{
+        "button":{
+            "save" :"Save"
+        },
+        "title":{
+            "version":{
+                "title":"Version",
+                "content":"Version Information"
+            }
+        }
+    }
+}

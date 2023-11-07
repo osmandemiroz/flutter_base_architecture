@@ -1,0 +1,17 @@
+{
+    "home": {
+        "title": "Ana Sayfa",
+        "subtitle": "Ana sayfaya hoş geldiniz"
+    },
+    "general":{
+        "button":{
+            "save" :"Kaydet"
+        },
+        "title":{
+            "version":{
+                "title":"Versiyon",
+                "content":"Versiyon Bilgisi"
+            }
+        }
+    }
+}
