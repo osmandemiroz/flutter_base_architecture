@@ -7,7 +7,9 @@ import 'package:flutter_architecture_template/product/utility/constants/enums/lo
 
 part 'widget/home_app_bar.dart';
 
+/// The HomeView class is a stateful widget in Dart.
 class HomeView extends StatefulWidget {
+  /// The line `const HomeView({super.key});` is defining a constructor
   const HomeView({super.key});
 
   @override

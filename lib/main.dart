@@ -1,17 +1,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_template/features/home/view/home_view.dart';
-import 'package:flutter_architecture_template/product/init/product_localication.dart';
+import 'package:flutter_architecture_template/product/init/application_initializer.dart';
+import 'package:flutter_architecture_template/product/init/product_localization.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
-  runApp(ProductLocalization(child: const MyApp()));
+  await ApplicationInitialize.setup();
+  runApp(ProductLocalization(child: const _MyApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// The MyApp class is a stateless widget in Dart.
+class _MyApp extends StatelessWidget {
+  /// The line `const MyApp({super.key});` is defining a constructor
+  const _MyApp();
 
   @override
   Widget build(BuildContext context) {
