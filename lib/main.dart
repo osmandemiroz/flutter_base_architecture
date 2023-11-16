@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_architecture_template/features/home/view/home_view.dart';
 import 'package:flutter_architecture_template/product/init/application_initializer.dart';
 import 'package:flutter_architecture_template/product/init/product_localization.dart';
+import 'package:flutter_architecture_template/product/init/theme/custom_dark_theme.dart';
+import 'package:flutter_architecture_template/product/init/theme/custom_light_theme.dart';
 
 Future<void> main() async {
   await ApplicationInitialize.setup();
@@ -17,6 +19,8 @@ class _MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: CustomLightTheme().themeData,
+      darkTheme: CustomDarkTheme().themeData,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

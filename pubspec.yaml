@@ -28,7 +28,7 @@ dependencies:
   kartal: ^3.5.0
   easy_logger: ^0.0.2
   logger: ^2.0.2+1
-
+  google_fonts: ^6.1.0
   #NETWORK
   vexana: ^3.5.4
 
