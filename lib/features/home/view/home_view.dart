@@ -5,6 +5,7 @@ import 'package:flutter_architecture_template/product/init/config/app_environmen
 import 'package:flutter_architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:flutter_architecture_template/product/init/product_localization.dart';
 import 'package:flutter_architecture_template/product/utility/constants/enums/locales.dart';
+import 'package:gen/gen.dart';
 
 part 'widget/home_app_bar.dart';
 
@@ -25,6 +26,7 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Assets.icons.icLove.svg(),
           ElevatedButton(
             onPressed: () {},
             child: Text(AppEnvironmentItems.baseUrl.value),

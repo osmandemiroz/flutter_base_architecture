@@ -1,12 +1,11 @@
 import 'package:envied/envied.dart';
-import 'package:flutter_architecture_template/product/init/config/app_config.dart';
+import 'package:gen/src/environment/app_config.dart';
 
 part 'dev_env.g.dart';
 
-@Envied(
-  obfuscate: true,
-  path: 'asset/env/.dev.env',
-)
+@Envied(path: 'assets/env/.dev.env', obfuscate: true)
+
+/// Production environment variables
 final class DevEnv implements AppConfig {
   @EnviedField(varName: 'BASE_URL')
   static final String _baseUrl = _DevEnv._baseUrl;
