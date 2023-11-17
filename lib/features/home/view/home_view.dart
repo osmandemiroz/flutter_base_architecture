@@ -6,6 +6,7 @@ import 'package:flutter_architecture_template/product/init/language/locale_keys.
 import 'package:flutter_architecture_template/product/init/product_localization.dart';
 import 'package:flutter_architecture_template/product/utility/constants/enums/locales.dart';
 import 'package:gen/gen.dart';
+import 'package:kartal/kartal.dart';
 
 part 'widget/home_app_bar.dart';
 
@@ -23,23 +24,35 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const _HomeAppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Assets.icons.icLove.svg(),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(AppEnvironmentItems.baseUrl.value),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Assets.icons.icLove.svg(
+                package: 'gen',
+              ),
+              Assets.images.imgFlags.image(
+                package: 'gen',
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(AppEnvironmentItems.baseUrl.value),
+              ),
+              const Text('change language'),
+              ElevatedButton(
+                onPressed: () => ProductLocalization.updateLanguage(
+                  context: context,
+                  value: Locales.tr,
+                ),
+                child: Text(
+                  LocaleKeys.general_button_save,
+                  style: context.general.textTheme.headlineLarge,
+                ).tr(),
+              ),
+            ],
           ),
-          const Text('change language'),
-          ElevatedButton(
-            onPressed: () => ProductLocalization.updateLanguage(
-              context: context,
-              value: Locales.tr,
-            ),
-            child: const Text(LocaleKeys.general_button_save).tr(),
-          ),
-        ],
+        ),
       ),
     );
   }
