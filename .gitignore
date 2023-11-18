@@ -44,8 +44,6 @@ app.*.map.json
 /android/app/release
 
 # Do not detect
-*.cc -linguist-detectable
-*.cpp -linguist-detectable
+*.cc 
+*.cpp 
 
-# Detect
-*.dart linguist-detectable
