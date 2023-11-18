@@ -42,3 +42,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Do not detect
+*.cc -linguist-detectable
+*.cpp -linguist-detectable
+
+# Detect
+*.dart linguist-detectable
