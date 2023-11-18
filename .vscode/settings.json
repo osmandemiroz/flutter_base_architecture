@@ -28,6 +28,5 @@
     "workbench.colorCustomizations": {
         "tab.activeBorderTop": "#FFE81F"
     },
-    "editor.inlineSuggest.enabled": true,
-    "docwriter.style": "Auto-detect"
+    "editor.inlineSuggest.enabled": true
 }

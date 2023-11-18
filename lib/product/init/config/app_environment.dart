@@ -10,7 +10,7 @@ final class AppEnvironment {
 
   ///Debug mode checker for which environment to use
   AppEnvironment.general() {
-    _config = kDebugMode ? DevEnv() : ProdEnv();
+    _config = kDebugMode ? ProdEnv() : DevEnv();
   }
 
   static late final AppConfig _config;

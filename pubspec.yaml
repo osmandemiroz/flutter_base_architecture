@@ -30,6 +30,9 @@ dependencies:
   #NETWORK
   vexana: ^3.5.4
 
+  #NAVIGATION
+  auto_route: ^7.8.4
+
   widgets:
     path: module/widgets
 
@@ -42,6 +45,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   very_good_analysis: ^5.1.0
   flutter_launcher_icons: ^0.13.1
+  auto_route_generator: ^7.3.2
+  build_runner: ^2.4.6
 
 flutter_Launcher_icons:
   android: "launcher_icon"
