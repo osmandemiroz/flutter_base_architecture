@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_template/features/home/view/mixin/home_view_mixin.dart';
@@ -38,6 +39,10 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
               ),
               Assets.images.imgFlags.image(
                 package: 'gen',
+              ),
+              const CustomNetworkImage(
+                size: Size(100, 200),
+                imageUrl: 'https://picsum.photos/id/1/200/300',
               ),
               ElevatedButton(
                 onPressed: () {
