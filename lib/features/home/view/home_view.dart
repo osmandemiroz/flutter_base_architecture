@@ -28,6 +28,11 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ///  SuccessDialog.show(title: 'title', context: context);
+        },
+      ),
       appBar: const _HomeAppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -37,12 +42,22 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
               Assets.icons.icLove.svg(
                 package: 'gen',
               ),
+              Text(''.ext.version),
+              Text(
+                ''.ext.appName,
+                style: context.general.textTheme.displayLarge,
+              ),
+              Container(
+                color: context.general.appTheme.primaryColorDark,
+                width: context.sized.dynamicHeight(0.6),
+                height: context.sized.dynamicHeight(0.1),
+              ),
               Assets.images.imgFlags.image(
                 package: 'gen',
               ),
               const CustomNetworkImage(
                 size: Size(100, 200),
-                imageUrl: 'https://picsum.photos/id/1/200/300',
+                imageUrl: '',
               ),
               ElevatedButton(
                 onPressed: () {
