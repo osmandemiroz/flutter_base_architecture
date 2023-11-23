@@ -7,7 +7,9 @@ import 'package:flutter_architecture_template/product/init/config/app_environmen
 import 'package:flutter_architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:flutter_architecture_template/product/init/product_localization.dart';
 import 'package:flutter_architecture_template/product/navigation/app_router.dart';
+import 'package:flutter_architecture_template/product/padding/project_padding.dart';
 import 'package:flutter_architecture_template/product/utility/constants/enums/locales.dart';
+import 'package:flutter_architecture_template/product/widget/button/bold_text_button.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
@@ -39,6 +41,13 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(
+                padding: const ProjectPadding.allLarge(),
+                child: BoldTextButton(
+                  onPressed: () {},
+                  child: Text(LocaleKeys.home_title.tr()),
+                ),
+              ),
               Assets.icons.icLove.svg(
                 package: 'gen',
               ),
