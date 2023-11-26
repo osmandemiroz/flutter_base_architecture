@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets/core/base_dialog.dart';
+import 'package:widgets/src/index.dart';
 
 ///User Question Answer
 final class QuestionAnswer {
