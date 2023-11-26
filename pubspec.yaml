@@ -15,6 +15,7 @@ dependencies:
 
   #CORE
   equatable: ^2.0.5
+  get_it: ^7.6.4
 
   #STATE MANAGEMENT
   flutter_riverpod: ^2.4.5

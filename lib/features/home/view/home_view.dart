@@ -27,67 +27,78 @@ final class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> with HomeViewMixin {
+  List<User> _users = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          _users = await loginService.users();
+          setState(() {});
+
           ///  SuccessDialog.show(title: 'title', context: context);
         },
       ),
       appBar: const _HomeAppBar(),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const ProjectPadding.allLarge(),
-                child: BoldTextButton(
-                  onPressed: () {},
-                  child: Text(LocaleKeys.home_title.tr()),
-                ),
-              ),
-              Assets.icons.icLove.svg(
-                package: 'gen',
-              ),
-              Text(''.ext.version),
-              Text(
-                ''.ext.appName,
-                style: context.general.textTheme.displayLarge,
-              ),
-              Container(
-                color: context.general.appTheme.primaryColorDark,
-                width: context.sized.dynamicHeight(0.6),
-                height: context.sized.dynamicHeight(0.1),
-              ),
-              Assets.images.imgFlags.image(
-                package: 'gen',
-              ),
-              const CustomNetworkImage(
-                size: Size(100, 200),
-                imageUrl: '',
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  context.router.push(HomeDetailRoute(id: 'secret'));
-                },
-                child: Text(AppEnvironmentItems.baseUrl.value),
-              ),
-              const Text('change language'),
-              ElevatedButton(
-                onPressed: () => ProductLocalization.updateLanguage(
-                  context: context,
-                  value: Locales.tr,
-                ),
-                child: Text(
-                  LocaleKeys.general_button_save,
-                  style: context.general.textTheme.headlineLarge,
-                ).tr(),
-              ),
-            ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const ProjectPadding.allLarge(),
+            child: BoldTextButton(
+              onPressed: () {},
+              child: Text(LocaleKeys.home_title.tr()),
+            ),
           ),
-        ),
+          // Assets.icons.icLove.svg(
+          //   package: 'gen',
+          // ),
+          Text(''.ext.version),
+          Text(
+            ''.ext.appName,
+            style: context.general.textTheme.displayLarge,
+          ),
+          Container(
+            color: context.general.appTheme.primaryColorDark,
+            width: context.sized.dynamicHeight(0.6),
+            height: context.sized.dynamicHeight(0.1),
+          ),
+          // Assets.images.imgFlags.image(
+          //   package: 'gen',
+          // ),
+          const CustomNetworkImage(
+            size: Size(100, 200),
+            imageUrl: '',
+          ),
+          ElevatedButton(
+            onPressed: () {
+              context.router.push(HomeDetailRoute(id: 'secret'));
+            },
+            child: Text(AppEnvironmentItems.baseUrl.value),
+          ),
+          const Text('change language'),
+          ElevatedButton(
+            onPressed: () => ProductLocalization.updateLanguage(
+              context: context,
+              value: Locales.tr,
+            ),
+            child: Text(
+              LocaleKeys.general_button_save,
+              style: context.general.textTheme.headlineLarge,
+            ).tr(),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: _users.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text(_users[index].userId.toString()),
+                  subtitle: Text(_users[index].body.toString()),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
