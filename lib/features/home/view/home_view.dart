@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture_template/features/home/view/mixin/home_view_mixin.dart';
 import 'package:flutter_architecture_template/features/home/view_model/home_viewmodel.dart';
+import 'package:flutter_architecture_template/features/home/view_model/state/base/base_state.dart';
 import 'package:flutter_architecture_template/features/home/view_model/state/home_state.dart';
 import 'package:flutter_architecture_template/product/init/config/app_environment.dart';
 import 'package:flutter_architecture_template/product/init/language/locale_keys.g.dart';
@@ -29,7 +30,7 @@ final class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> with HomeViewMixin {
+class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
   final List<User> _users = [];
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,7 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
+            productViewModel.changeTheme(themeMode: ThemeMode.dark);
             homeViewModel.changeLoading();
             // _users = await loginService.users();
             // setState(() {});
@@ -108,22 +110,27 @@ class _UserList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<HomeViewModel, HomeState, List<User>>(
-      selector: (state) {
-        return state.users ?? [];
+    return BlocListener<HomeViewModel, HomeState>(
+      listener: (context, state) {
+        print(state.users);
       },
-      builder: (context, state) {
-        if (state.isEmpty) return const SizedBox.shrink();
-        return ListView.builder(
-          itemCount: state.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              title: Text(state[index].userId.toString()),
-              subtitle: Text(state[index].body.toString()),
-            );
-          },
-        );
-      },
+      child: BlocSelector<HomeViewModel, HomeState, List<User>>(
+        selector: (state) {
+          return state.users ?? [];
+        },
+        builder: (context, state) {
+          if (state.isEmpty) return const SizedBox.shrink();
+          return ListView.builder(
+            itemCount: state.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: Text(state[index].userId.toString()),
+                subtitle: Text(state[index].body.toString()),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
+import 'package:flutter_architecture_template/features/home/view_model/state/base/base_cubit.dart';
 import 'package:flutter_architecture_template/features/home/view_model/state/home_state.dart';
 import 'package:flutter_architecture_template/product/services/interfaces/auth_operation.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-final class HomeViewModel extends Cubit<HomeState> {
+final class HomeViewModel extends BaseCubit<HomeState> {
   ///default value initialized
   HomeViewModel({required AuthOperation authOperation})
       : _authOperation = authOperation,
