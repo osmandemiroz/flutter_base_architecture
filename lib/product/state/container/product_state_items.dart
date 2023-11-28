@@ -1,4 +1,5 @@
 import 'package:flutter_architecture_template/features/home/view_model/state/view_model/product_viewmodel.dart';
+import 'package:flutter_architecture_template/product/cache/product_cache.dart';
 import 'package:flutter_architecture_template/product/services/manager/index.dart';
 import 'package:flutter_architecture_template/product/state/container/product_state_container.dart';
 
@@ -10,4 +11,6 @@ final class ProductStateItems {
 
   static ProductViewModel get productViewModel =>
       ProductContainer.read<ProductViewModel>();
+
+  static ProductCache get productCache => ProductContainer.read<ProductCache>();
 }

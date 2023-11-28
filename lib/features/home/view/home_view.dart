@@ -39,6 +39,7 @@ class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
+            await homeViewModel.fetchUser();
             productViewModel.changeTheme(themeMode: ThemeMode.dark);
             homeViewModel.changeLoading();
             // _users = await loginService.users();
@@ -111,9 +112,7 @@ class _UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<HomeViewModel, HomeState>(
-      listener: (context, state) {
-        print(state.users);
-      },
+      listener: (context, state) {},
       child: BlocSelector<HomeViewModel, HomeState, List<User>>(
         selector: (state) {
           return state.users ?? [];

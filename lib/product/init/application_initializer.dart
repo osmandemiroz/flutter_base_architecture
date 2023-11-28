@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_architecture_template/product/init/config/app_environment.dart';
 import 'package:flutter_architecture_template/product/state/container/product_state_container.dart';
+import 'package:flutter_architecture_template/product/state/container/product_state_items.dart';
 import 'package:kartal/kartal.dart';
 import 'package:logger/logger.dart';
 
@@ -42,10 +43,12 @@ final class ApplicationInitialize {
       //   TODO: add custom logger
       Logger().e(details.exceptionAsString());
     };
+
     AppEnvironment.general();
 
     ProductContainer.setup();
 
+    await ProductStateItems.productCache.init();
     //Dependency initialize
     //
     //envied
