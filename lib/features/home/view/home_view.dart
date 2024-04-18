@@ -31,7 +31,6 @@ final class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
-  final List<User> _users = [];
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
