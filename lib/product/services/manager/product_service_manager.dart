@@ -14,7 +14,7 @@ final class ProductNetworkManager extends NetworkManager<EmptyModel> {
         );
 
   /// Handle error
-  /// [onErrorStatus] is error status code [HttStatus]
+  /// [onErrorStatus] is error status code [HttpStatus]
   void listenErrorState({required ValueChanged<int> onErrorStatus}) {
     interceptors.add(
       InterceptorsWrapper(

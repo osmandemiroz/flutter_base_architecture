@@ -1,5 +1,5 @@
 // Project service path
-// ignore_for_file: public_member_api_docs
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 enum ProjectServicePath {
   userV1('user'),

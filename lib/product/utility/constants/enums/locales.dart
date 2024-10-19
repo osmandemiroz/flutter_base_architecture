@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first, lines_longer_than_80_chars
+
 import 'package:flutter/material.dart';
 
 /// The `enum Locales` is defining an enumeration in Dart called `Locales`. An enumeration is a special

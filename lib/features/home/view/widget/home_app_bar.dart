@@ -7,7 +7,7 @@ class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       actions: const [
-        _loadingIndicator(),
+        _HomeAppBarLoading(),
       ],
     );
   }
@@ -17,8 +17,8 @@ class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 @immutable
-class _loadingIndicator extends StatelessWidget {
-  const _loadingIndicator();
+class _HomeAppBarLoading extends StatelessWidget {
+  const _HomeAppBarLoading();
 
   @override
   Widget build(BuildContext context) {

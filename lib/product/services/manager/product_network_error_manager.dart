@@ -10,7 +10,7 @@ final class ProductNetworkErrorManager {
 
   void handleError(int value) {
     if (value == HttpStatus.unauthorized) {
-      ///TODO: Handle unauthorized error here
+      //TODO: Handle unauthorized error here
     }
   }
 }

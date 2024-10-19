@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_architecture_template/features/home/view_model/state/view_model/product_viewmodel.dart';
 import 'package:flutter_architecture_template/product/services/manager/index.dart';

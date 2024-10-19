@@ -6,6 +6,7 @@ import 'package:flutter_architecture_template/product/services/interfaces/auth_o
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
+///HomeView Model
 final class HomeViewModel extends BaseCubit<HomeState> {
   ///default value initialized
   HomeViewModel({
@@ -22,6 +23,7 @@ final class HomeViewModel extends BaseCubit<HomeState> {
     emit(state.copyWith(isLoading: !state.isLoading));
   }
 
+  ///fetch user
   Future<void> fetchUser() async {
     CustomLogger.showError<User>(usersFromCache);
     final response = await _authOperation.users();

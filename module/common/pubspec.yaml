@@ -1,10 +1,10 @@
 name: common
 description: A new Flutter package project.
 version: 0.0.1
-homepage: 'none'
+homepage: "none"
 
 environment:
-  sdk: '>=3.1.5 <4.0.0'
+  sdk: ">=3.1.5 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -19,10 +19,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   very_good_analysis: ^5.1.0
 
-
 flutter:
 
-  
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
